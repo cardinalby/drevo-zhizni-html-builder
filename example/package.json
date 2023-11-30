@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "build": "../bin/build.js"
+    "build": "../bin/index.js"
   }
 }

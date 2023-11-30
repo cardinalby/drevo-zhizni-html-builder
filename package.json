@@ -1,6 +1,6 @@
 {
   "name": "drevo-shizni-html-builder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "cardinalby",
   "description": "Builds a proper html page from 'Древо Жизни' app's exported tree",
   "engines": {
@@ -14,10 +14,11 @@
   "license": "MIT",
   "files": [
     "dist/**/*",
-    "bin/**/*"
+    "bin/**/*",
+    "web/**/*"
   ],
   "bin": {
-    "drevo-zhizni-html-builder": "./bin/build.js"
+    "drevo-zhizni-html-builder": "./bin/index.js"
   },
   "scripts": {
     "build": "npx webpack",
