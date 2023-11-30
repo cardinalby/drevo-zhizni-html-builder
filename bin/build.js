@@ -3,7 +3,11 @@
 const fs = require("fs-extra");
 const path = require("path");
 const glob = require("glob");
-const {modifyMainHtmlDom, processHtml, modifyPopupHtmlDom} = require("./mutator");
+const {
+    modifyMainHtmlDom,
+    processHtml,
+    modifyPopupHtmlDom
+} = require("./mutator");
 const getConfig = require("./config");
 
 const cfgPath = process.argv.length > 3
