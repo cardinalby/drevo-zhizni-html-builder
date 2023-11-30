@@ -1,6 +1,6 @@
 {
   "name": "drevo-shizni-html-builder",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "cardinalby",
   "description": "Builds a proper html page from 'Древо Жизни' app's exported tree",
   "engines": {

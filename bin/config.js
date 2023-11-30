@@ -33,6 +33,9 @@ function getConfig(cfgPath) {
     } else if (typeof cfg.page.zoom_step !== 'number') {
         throw new Error('"page.zoom_step" must be a number')
     }
+    if (cfg.page.max_zoom < cfg.page.min_zoom) {
+        throw new Error('"page.max_zoom" must be greater than or equal to "page.min_zoom"')
+    }
     if (cfg.page.use_anchor_state === undefined) {
         cfg.page.use_anchor_state = true
     } else if (typeof cfg.page.use_anchor_state !== 'boolean') {
