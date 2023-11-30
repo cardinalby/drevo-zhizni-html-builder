@@ -7,6 +7,8 @@ on:
   workflow_dispatch:
 jobs:
   deploy:
+    permissions:
+      contents: write
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
@@ -24,4 +26,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./example/html

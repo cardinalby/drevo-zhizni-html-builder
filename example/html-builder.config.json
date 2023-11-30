@@ -1,6 +1,6 @@
 {
-  "entry": "src_html/tree.html",
-  "output": "dist",
+  "entry": "html/src/tree.html",
+  "output": "html/dist",
   "favicon": "favicon.png",
   "robots_noindex": true,
   "page": {
