@@ -81,7 +81,7 @@ Create a config file:
 
 ## All config options
 
-```json
+```js
 {
   "entry": "src/tree.html",   // source html file
   "output": "html/dist",      // output directory
