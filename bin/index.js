@@ -25,12 +25,13 @@ const outputTreeHtmlFilePath = path.join(outputDir, treeFileName)
 const outputTreeHtmlFilesDir = path.join(outputDir, treeFileName + '.files')
 const popupCustomCssFileName = 'popup-custom.css'
 const srcPopupCustomCssPath = path.join(__dirname, '..', 'web', popupCustomCssFileName)
+const outputPopupCustomCssPath = path.join(outputDir, popupCustomCssFileName)
 const indexJsFileName = 'index.js'
 const srcIndexJsPath = path.join(__dirname, '..', 'dist', indexJsFileName)
 const outputIndexJsPath = path.join(outputDir, indexJsFileName)
 const faviconFileName = path.basename(cfg.favicon)
 const outputFaviconFilePath = path.join(outputDir, faviconFileName)
-const faviconPath = path.join(cfgDir, cfg.favicon)
+const srcFaviconPath = path.join(cfgDir, cfg.favicon)
 
 if (fs.existsSync(outputDir)) {
     fs.rmSync(outputDir, {recursive: true});
@@ -39,9 +40,9 @@ fs.ensureDirSync(outputDir);
 
 // process tree html
 
-if (cfg.favicon && path.normalize(faviconPath) !== path.normalize(outputFaviconFilePath)) {
-    console.log(`Copying ${faviconPath} to ${outputFaviconFilePath}...`);
-    fs.copySync(faviconPath, outputFaviconFilePath);
+if (cfg.favicon && path.normalize(srcFaviconPath) !== path.normalize(outputFaviconFilePath)) {
+    console.log(`Copying ${srcFaviconPath} to ${outputFaviconFilePath}...`);
+    fs.copySync(srcFaviconPath, outputFaviconFilePath);
 }
 
 fs.copySync(srcTreeHtmlFilePath, outputTreeHtmlFilePath);
@@ -70,5 +71,5 @@ glob(path.join(outputTreeHtmlFilesDir, "*.html"), undefined, function (err, file
 
 // copying assets
 
-fs.copySync(srcPopupCustomCssPath, popupCustomCssFileName);
+fs.copySync(srcPopupCustomCssPath, outputPopupCustomCssPath);
 fs.copySync(srcIndexJsPath, outputIndexJsPath);
